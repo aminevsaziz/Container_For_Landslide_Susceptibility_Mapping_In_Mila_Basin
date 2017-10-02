@@ -1,9 +1,9 @@
 FROM debian:stretch
 
-LABEL org.label-schema.license="GPL-2.0" \
-      #org.label-schema.vcs-url="https://github.com/rocker-org/rocker-versioned" \
-      org.label-schema.vendor="Merghadi A.A" \
-      maintainer="Merghadi A.A <aminevsaziz@outlook.com>"
+LABEL org.label-schema.license="GPL-3.0" \
+      org.label-schema.vcs-url="https://github.com/aminevsaziz/Container_For_Landslide_Susceptibility_Mapping_In_Mila_Basin" \
+      org.label-schema.vendor="Merghadi Abdelaziz" \
+      maintainer="Merghadi Abdelaziz <aminevsaziz@outlook.com>"
 
 ARG RSTUDIO_VERSION
 
@@ -53,8 +53,6 @@ RUN COMPILEDEPS="build-essential \
   && rm /etc/apt/sources.list \
   && sources="deb http://cloudfront.debian.net/debian stretch main contrib \ndeb http://cloudfront.debian.net/debian stretch-updates main contrib \ndeb http://cloudfront.debian.net/debian-security stretch/updates main contrib \ndeb http://cloud.r-project.org/bin/linux/debian stretch-cran34/" \
   && printf "$sources" >> /etc/apt/sources.list \
-  # && sources="deb https://cloudfront.debian.net/debian/ stable main contrib\ndeb https://cloudfront.debian.net/debian-security/ stable/updates main contrib\ndeb http://deb.debian.org/debian stretch main contrib non-free\ndeb-src http://deb.debian.org/debian stretch main contrib non-free\ndeb http://deb.debian.org/debian stretch-updates main contrib non-free\ndeb-src http://deb.debian.org/debian stretch-updates main contrib non-free\ndeb http://security.debian.org/ stretch/updates main contrib non-free\ndeb-src http://security.debian.org/ stretch/updates main contrib non-free\ndeb http://cloud.r-project.org/bin/linux/debian stretch-cran34/" \
-  # && printf "$sources" >> /etc/apt/sources.list \
   && apt-get -q update \
   && apt-get -y install --no-install-recommends $COMPILEDEPS \
   ## Configure default locale
@@ -126,9 +124,6 @@ RUN COMPILEDEPS="build-essential \
                   --with-readline \
                   --disable-nls \
                   --without-recommended-packages \
-                  #--enable-BLAS-shlib \
-                  #--with-blas="-L/usr/lib/atlas-base -lf77blas -latlas" \
-                  #--with-lapack="-L/usr/lib/atlas-base -llapack -lcblas" \
   ## make,check & install
   && make && make install \
   ## Add a library directory (for user-installed packages)
@@ -304,6 +299,7 @@ RUN install2.r  --error  \
      setRNG \
      sp \
      raster \
+     rgdal \
      packrat \
      ## Additional ggplot2 Extensions
      ggraptR \
@@ -330,9 +326,14 @@ VOLUME /home/rstudio/kitematic
 
 CMD ["/init"]
 
-# ---------------------------
+# ----------------------
 # Get project scripts
-# ---------------------------
+# ----------------------
  RUN cd /home/rstudio \
      && git clone https://github.com/aminevsaziz/Landslide_Susceptibility_Mapping_In_Mila_Basin.git \
  && chown -R rstudio:rstudio Landslide_Susceptibility_Mapping_In_Mila_Basin
+
+ # ----------
+ # Notes
+ # ----------
+ # Nothing Yet!!
