@@ -7,11 +7,11 @@ LABEL org.label-schema.license="GPL-3.0" \
 
 ARG RSTUDIO_VERSION
 
-ENV R_VERSION=3.4.1 \
+ENV R_VERSION=3.4.3 \
     LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8 \
     TERM=xterm \
-    MRAN=https://mran.microsoft.com/snapshot/2017-07-05 \
+    MRAN=https://mran.microsoft.com/snapshot/2018-02-10 \
     PANDOC_TEMPLATES_VERSION=1.18 \
     JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre \
     PATH=/usr/lib/rstudio-server/bin:$JAVA_HOME/bin:$PATH
@@ -120,9 +120,11 @@ RUN COMPILEDEPS="build-essential \
                   FFLAGS="-g -O2 -fstack-protector-strong" \
                   FCFLAGS="-g -O2 -fstack-protector-strong" \
                   --enable-R-shlib \
-                  --disable-memory-profiling \
+                  --enable-memory-profiling \
                   --with-readline \
+                  --with-tcltk \
                   --disable-nls \
+                  --with-blas \
                   --without-recommended-packages \
   ## make,check & install
   && make && make install \
@@ -330,8 +332,8 @@ CMD ["/init"]
 # Get project scripts
 # ----------------------
  RUN cd /home/rstudio \
-     && git clone https://github.com/aminevsaziz/Landslide_Susceptibility_Mapping_In_Mila_Basin.git \
- && chown -R rstudio:rstudio Landslide_Susceptibility_Mapping_In_Mila_Basin
+     && git clone https://github.com/aminevsaziz/lsm_in_Mila_basin.git \
+ && chown -R rstudio:rstudio lsm_in_Mila_basin
 
  # ----------
  # Notes
