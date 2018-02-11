@@ -210,7 +210,7 @@ RUN cd /tmp/ \
   && apt-get -q update \
   && apt-get -y install --no-install-recommends $COMPILEDEPS $Rstudio $rjava $Spatial \
   ## install missing stretch libssl1.0.0 from debian pool
-  && wget -O libssl1.0.0.deb http://ftp.debian.org/debian/pool/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb \
+  && wget -O libssl1.0.0.deb http://ftp.debian.org/debian/pool/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u7_amd64.deb \
   && dpkg -i libssl1.0.0.deb \
   && rm libssl1.0.0.deb \
   ## Attempts to get detect latest version, otherwise falls back to version given in $VER
