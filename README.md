@@ -5,7 +5,14 @@
 
 [container_for_lsm_in_Mila_basin](https://github.com/aminevsaziz/container_for_lsm_in_Mila_basin) is Docker image repository made for "Landslide Susceptibility Mapping In Mila Basin" project available under [lsm_in_Mila_basin](https://github.com/aminevsaziz/lsm_in_Mila_basin) repository.
 
+## How to Cite and Citing Publications
 
+To cite this code in publications, please cite:
+
+- The [paper](https://doi.org/10.3390/ijgi7070268) attached to this source code available [here](https://doi.org/10.3390/ijgi7070268) .
+- The repository itself using the following DOI [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1000431.svg)](https://doi.org/10.5281/zenodo.1000431) and [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1000436.svg)](https://doi.org/10.5281/zenodo.1000436)
+
+Some parts of the source code were created as part of other publications. If you use these parts, please cite the relevant work appropriately.
 
 ## Issues
 
