@@ -9,8 +9,7 @@
 
 ## Issues
 
-Feel free to fork the repository and submit issues (send me pull requests as needed). If git isn't your thing, e-mail me at [aminevsaziz@outlook.com](aminevsaziz@outlook.com) for any enhancements or corrections.
-
+Feel free to fork the repository and submit issues (send me pull requests as needed). If git isn't your thing, e-mail me at [abdelaziz.merghadi@gmail.com](abdelaziz.merghadi@gmail.com) for any enhancements or corrections.
 
 
 ## Maintenance and Updates
